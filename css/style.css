@@ -9,8 +9,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 40px;
+  width: 150px;
+  height: 50px;
+  font-size: 24px;
   background: #ccc;
 }
 .tabs li.active{
@@ -37,7 +38,7 @@
   position: relative; 
   height: 100%;
   padding: 3px 0;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 400;
   color: #ccc;
   box-sizing: border-box;
@@ -180,6 +181,12 @@
     top: 80px;
     margin: 0;
   }
+  .tabs li {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .gender_tab li { font-size: 18px; }
   .gender_tab li.active { color: #fff; }
   .gender_tab li.active::after { background: #fff; }
   .swiper-slide p { bottom: 100px; }
