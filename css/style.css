@@ -11,17 +11,22 @@
   height: 40px;
   background: #ccc;
 }
-.tabs li.current{
+.tabs li.active{
 	background: #333;
 	color: #fff;
 }
 
 .swiper {
+  width: 100%;
+  height: 100%;
+}
+.tab_content { 
   display: none;
   width: 100%;
   height: 100%;
 }
-.swiper.current { display: inherit; }
+
+.tab_content.show { display: inherit; }
 
 .swiper-slide {
   text-align: center;
