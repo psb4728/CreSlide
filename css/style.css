@@ -6,7 +6,7 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,4 +90,10 @@
   border-radius: 5px;
   background: #fff;
   border: 1px solid transparent;
+}
+
+
+@media screen and (max-width: 480px) {
+  .swiper-slide img { object-fit: contain; }
+  .logo_wrap { width: 100px; height: 100px; }
 }
