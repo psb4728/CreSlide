@@ -1,3 +1,4 @@
+
 .tabs {
   display: flex;
   align-items: center;
@@ -12,11 +13,55 @@
   background: #ccc;
 }
 .tabs li.active{
+  font-weight: 700;
 	background: #333;
 	color: #fff;
 }
 
+.gender_tab {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  font-weight: 700;
+  z-index: 10;
+}
+.gender_tab li { 
+  position: relative; 
+  height: 100%;
+  padding: 3px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ccc;
+  box-sizing: border-box;
+}
+.gender_tab li.active {
+  color: #fff;
+}
+.gender_tab li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  opacity: 0.9;
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  transition: all 0.35s;
+}
+.gender_tab li.active::after {
+  width: 100%;
+}
+
 .swiper {
+  display: none;
   width: 100%;
   height: 100%;
 }
@@ -26,6 +71,7 @@
   height: 100%;
 }
 
+.swiper.show,
 .tab_content.show { display: inherit; }
 
 .swiper-slide {
@@ -57,7 +103,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 80px;
+  bottom: 100px;
   left: 50%;
   width: 200px;
   height: 50px;
@@ -116,7 +162,9 @@
   background: #fff;
   border: 1px solid transparent;
 }
-
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 58px;
+}
 
 @media screen and (max-width: 480px) {
   .swiper-slide img { object-fit: contain; }
