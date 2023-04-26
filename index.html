@@ -22,30 +22,32 @@
   
 </head>
 <body>
-  <div class="swiper mySwiper">
+  <ul class="tabs">
+    <li class="tab-link current" data-tab="tab-1">홍게코</li>
+    <li class="tab-link" data-tab="tab-2">영양게코</li>
+    <li class="tab-link" data-tab="tab-3">Ako</li>
+    <li class="tab-link" data-tab="tab-4">콩게코</li>
+  </ul>
+
+  <div id="tab-1" class="swiper mySwiper current">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
         <img src="/images/img1.jpg" alt="">
         <p>파닥이 </p>
       </div>
       <div class="swiper-slide">
-        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
         <img src="/images/img2.jpg" alt="">
         <p>미르곰</p>
       </div>
       <div class="swiper-slide">
-        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
         <img src="/images/img3.jpg" alt="">
         <p>티아</p>
       </div>
       <div class="swiper-slide">
-        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
         <img src="/images/img4.jpg" alt="">
         <p>백이</p>
       </div>
       <div class="swiper-slide">
-        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
         <img src="/images/img5.jpg" alt="">
         <p>헤라</p>
       </div>
@@ -62,19 +64,121 @@
   </div>
 
 
+  <div id="tab-2" class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/images/img2.jpg" alt="">
+        <p>미르곰</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img1.jpg" alt="">
+        <p>파닥이 </p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img3.jpg" alt="">
+        <p>티아</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img4.jpg" alt="">
+        <p>백이</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img5.jpg" alt="">
+        <p>헤라</p>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="autoplay-progress">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20"></circle>
+      </svg>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="tab-3" class="swiper mySwiper3">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/images/img3.jpg" alt="">
+        <p>티아</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img1.jpg" alt="">
+        <p>파닥이 </p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img2.jpg" alt="">
+        <p>미르곰</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img4.jpg" alt="">
+        <p>백이</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img5.jpg" alt="">
+        <p>헤라</p>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="autoplay-progress">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20"></circle>
+      </svg>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="tab-4" class="swiper mySwiper4">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/images/img5.jpg" alt="">
+        <p>헤라</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img1.jpg" alt="">
+        <p>파닥이 </p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img2.jpg" alt="">
+        <p>미르곰</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img3.jpg" alt="">
+        <p>티아</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/img4.jpg" alt="">
+        <p>백이</p>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
   <!-- js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="../js/jquery.blockUI.js"></script>
   <script>
-    const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
+    $(function () {
+      $('ul.tabs li').click(function () {
+        let tab_id = $(this).attr('data-tab');
+
+        $('ul.tabs li').removeClass('current');
+        $('.swiper').removeClass('current');
+
+        $(this).addClass('current');
+        $('#' + tab_id).addClass('current');
+      });
+    });
+
     var swiper = new Swiper(".mySwiper", {
       loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true
@@ -82,12 +186,42 @@
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
+      }
+    });
+
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
       },
-      on: {
-        autoplayTimeLeft(s, time, progress) {
-          progressCircle.style.setProperty("--progress", 1 - progress);
-          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-        }
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+
+    var swiper3 = new Swiper(".mySwiper3", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+
+    var swiper4 = new Swiper(".mySwiper4", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
       }
     });
   </script>
