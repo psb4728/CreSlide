@@ -24,11 +24,26 @@
 <body>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="/images/img1.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="/images/img2.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="/images/img3.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="/images/img4.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="/images/img5.jpg" alt=""></div>
+      <div class="swiper-slide">
+        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
+        <img src="/images/img1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
+        <img src="/images/img2.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
+        <img src="/images/img3.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
+        <img src="/images/img4.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <div class="logo_wrap"><img src="/images/gomi_logo.png" alt="고미게코"></div>
+        <img src="/images/img5.jpg" alt="">
+      </div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -50,12 +65,10 @@
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
     var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
       loop: true,
       autoplay: {
         delay: 2500,
-        disableOnInteraction: true
+        disableOnInteraction: false,
       },
       pagination: {
         el: ".swiper-pagination",
