@@ -2,6 +2,7 @@
 .tabs {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 .tabs li {
@@ -19,16 +20,17 @@
 }
 
 .gender_tab {
-  position: fixed;
+  /* position: fixed;
   width: 100%;
   left: 0;
-  top: 80px;
+  top: 80px; */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  color: #fff;
+  color: #777;
   font-weight: 700;
+  margin: 40px 0;
   z-index: 10;
 }
 .gender_tab li { 
@@ -41,14 +43,15 @@
   box-sizing: border-box;
 }
 .gender_tab li.active {
-  color: #fff;
+  font-weight: 700;
+  color: #222;
 }
 .gender_tab li::after {
   content: "";
   display: block;
   width: 0%;
   height: 2px;
-  background: #fff;
+  background: #222;
   opacity: 0.9;
   position: absolute;
   left: 50%;
@@ -103,7 +106,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 100px;
+  bottom: 60px;
   left: 50%;
   width: 200px;
   height: 50px;
@@ -162,9 +165,6 @@
   background: #fff;
   border: 1px solid transparent;
 }
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: 58px;
-}
 
 @media screen and (max-width: 480px) {
   .swiper-slide img { object-fit: contain; }
@@ -173,5 +173,17 @@
     width: 140px;
     font-size: 20px;
   }
-
+  .gender_tab {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 80px;
+    margin: 0;
+  }
+  .gender_tab li.active { color: #fff; }
+  .gender_tab li.active::after { background: #fff; }
+  .swiper-slide p { bottom: 100px; }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 58px;
+  }
 }
